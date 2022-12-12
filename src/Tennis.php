@@ -26,13 +26,24 @@ Class Tennis{
     }
 
     public function calcularPuntuacion($array){
-        $punto = $array[0];
+        $puntuaciones = ["Love", "15", "30"];
+        $puntosJug1 = 0;
+        $puntosJug2 = 0;
 
-        if ($punto[0] + $punto[1] != 1) throw new Exception("Valores para el punto inválidos");
+        foreach ($array as $clave => $valor){
+            $punto = $array[$clave];
 
-        if ($punto[0]==1) $this->setMarcador1("15");
-        else if ($punto[1]==1) $this->setMarcador2("15");
-        
+            if ($punto[0] + $punto[1] != 1) throw new Exception("Valores para el punto inválidos");
+
+            if ($punto[0]==1){
+                $puntosJug1 += 1;
+                $this->setMarcador1($puntuaciones[$puntosJug1]);
+            }
+            else if ($punto[1]==1){
+                $puntosJug2 += 1;
+                $this->setMarcador2($puntuaciones[$puntosJug2]);
+            }
+        }
         return [$this->getMarcador1(), $this->getMarcador2()];
     }
 }
