@@ -14,6 +14,18 @@ Class Tennis{
     public function getMarcador2(){
         return $this->marcador2;
     }
+
+    public function setMarcador1($valor){
+        $this->marcador1=$valor;
+    }
+
+    public function calcularPuntuacion($array){
+        $punto = $array[0];
+
+        if ($punto[0]==1) $this->setMarcador1("15");
+        
+        return [$this->getMarcador1(), $this->getMarcador2()];
+    }
 }
 
 ?>
