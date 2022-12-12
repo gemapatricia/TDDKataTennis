@@ -26,7 +26,7 @@ Class Tennis{
     }
 
     public function calcularPuntuacion($array){
-        $puntuaciones = ["Love", "15", "30"];
+        $puntuaciones = ["Love", "15", "30", "40"];
         $puntosJug1 = 0;
         $puntosJug2 = 0;
 
