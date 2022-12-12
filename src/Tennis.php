@@ -19,10 +19,15 @@ Class Tennis{
         $this->marcador1=$valor;
     }
 
+    public function setMarcador2($valor){
+        $this->marcador2=$valor;
+    }
+
     public function calcularPuntuacion($array){
         $punto = $array[0];
 
         if ($punto[0]==1) $this->setMarcador1("15");
+        else if ($punto[1]==1) $this->setMarcador2("15");
         
         return [$this->getMarcador1(), $this->getMarcador2()];
     }
