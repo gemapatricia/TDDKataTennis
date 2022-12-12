@@ -10,6 +10,11 @@ Class TennisTest extends TestCase{
     public function testInicio():void{
         $objeto = new Tennis();
         assertEquals("Love", $objeto->getMarcador1(), "No coincide la puntuacion inicial");
+    }
+    
+    public function testInicio2():void{
+        $objeto = new Tennis();
+        assertEquals("Love", $objeto->getMarcador2(), "No coincide la puntuacion inicial");
     } 
 }
 
