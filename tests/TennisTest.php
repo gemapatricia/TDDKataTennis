@@ -36,6 +36,16 @@ Class TennisTest extends TestCase{
             assertEquals($e->getMessage(), "Valores para el punto inválidos", "No coincide la excepción");
         }
     } 
+
+    public function testPrimerPuntoInvalido2():void{
+        try{
+            $objeto = new Tennis();
+            $objeto->calcularPuntuacion([[0,0]]);
+        }
+        catch(Exception $e){
+            assertEquals($e->getMessage(), "Valores para el punto inválidos", "No coincide la excepción");
+        }
+    } 
 }
 
 ?>
