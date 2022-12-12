@@ -2,6 +2,8 @@
 
 namespace App;
 
+use Exception;
+
 Class Tennis{
 
     private $marcador1="Love";
@@ -25,6 +27,8 @@ Class Tennis{
 
     public function calcularPuntuacion($array){
         $punto = $array[0];
+
+        if ($punto[0] + $punto[1] != 1) throw new Exception("Valores para el punto inválidos");
 
         if ($punto[0]==1) $this->setMarcador1("15");
         else if ($punto[1]==1) $this->setMarcador2("15");
