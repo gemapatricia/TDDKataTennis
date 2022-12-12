@@ -69,7 +69,7 @@ Class TennisTest extends TestCase{
 
     public function testTercerPunto1():void{
         $objeto = new Tennis();
-        assertEquals(["40", "0"], $objeto->calcularPuntuacion([[1,0], [1,0], [1,0]]), "No coincide la puntuacion segundo punto");
+        assertEquals(["40", "Love"], $objeto->calcularPuntuacion([[1,0], [1,0], [1,0]]), "No coincide la puntuacion segundo punto");
     } 
 }
 
