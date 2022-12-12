@@ -16,6 +16,11 @@ Class TennisTest extends TestCase{
         $objeto = new Tennis();
         assertEquals("Love", $objeto->getMarcador2(), "No coincide la puntuacion inicial");
     } 
+
+    public function testPrimerPunto1():void{
+        $objeto = new Tennis();
+        assertEquals(["15", "Love"], $objeto->calcularPuntuacion([[1,0]]), "No coincide la puntuacion primer punto");
+    } 
 }
 
 ?>
