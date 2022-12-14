@@ -72,10 +72,15 @@ Class TennisTest extends TestCase{
         assertEquals(["40", "Love"], $objeto->calcularPuntuacion([[1,0], [1,0], [1,0]]), "No coincide la puntuacion segundo punto");
     } 
 
-    public function testGanadorJugador1():void{
+    public function testGanadorJugador1Set():void{
         $objeto = new Tennis();
         assertEquals(["Set", "Love"], $objeto->calcularPuntuacion([[1,0], [1,0], [1,0], [1,0]]), "No coincide la puntuacion segundo punto");
     } 
+
+    public function testGanadorJugador2Set():void{
+        $objeto = new Tennis();
+        assertEquals(["30", "Set"], $objeto->calcularPuntuacion([[0,1], [0,1], [1,0], [1,0], [0,1], [0,1]]), "No coincide la puntuacion segundo punto");
+    }
 }
 
 ?>
