@@ -36,6 +36,12 @@ Class Tennis{
         }
     }
 
+    public function comprobarVentaja($puntJug1, $puntJug2){
+        if ($puntJug1==4 && $puntJug2==3) return true;
+        elseif ($puntJug2==4 && $puntJug1==3) return true;
+        else return false;
+    }
+
     public function calcularPuntuacion($array){
         $puntuaciones = ["Love", "15", "30", "40"];
         $puntosJug1 = $puntosJug2 = 0;
@@ -46,7 +52,7 @@ Class Tennis{
             if ($punto[0] + $punto[1] != 1) throw new Exception("Valores para el punto inválidos");
 
             if ($punto[0]==1){
-                if (++$puntosJug1==4 && $puntosJug2==3) $this->setMarcador1("AD");
+                if ($this->comprobarVentaja(++$puntosJug1, $puntosJug2)) $this->setMarcador1("AD");
                 elseif (($puntosJug1==4 && $this->getMarcador2()!="AD") || $this->getMarcador1()=="AD") $this->ganadorSet(1);
                 elseif ($puntosJug1==4 && $this->getMarcador2()=="AD"){
                     $puntosJug1 = $puntosJug2 = 3;
@@ -55,7 +61,7 @@ Class Tennis{
                 else $this->setMarcador1($puntuaciones[$puntosJug1]);
             }
             else if ($punto[1]==1){
-                if (++$puntosJug2==4 && $puntosJug1==3) $this->setMarcador2("AD");
+                if ($this->comprobarVentaja($puntosJug1, ++$puntosJug2)) $this->setMarcador2("AD");
                 elseif (($puntosJug2==4 && $this->getMarcador1()!="AD") || $this->getMarcador2()=="AD") $this->ganadorSet(2);
                 elseif ($puntosJug2==4 && $this->getMarcador1()=="AD"){
                     $puntosJug1 = $puntosJug2 = 3;
