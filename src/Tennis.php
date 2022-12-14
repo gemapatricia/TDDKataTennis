@@ -52,7 +52,7 @@ Class Tennis{
             }
             else if ($punto[1]==1){
                 if (++$puntosJug2==4 && $puntosJug1==3) $this->setMarcador2("AD");
-                elseif ($puntosJug2==4) $this->ganadorSet(2);
+                elseif ($puntosJug2==4 || $this->getMarcador2()=="AD") $this->ganadorSet(2);
                 else $this->setMarcador2($puntuaciones[$puntosJug2]);
             }
         }
