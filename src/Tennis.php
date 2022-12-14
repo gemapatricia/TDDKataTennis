@@ -54,7 +54,7 @@ Class Tennis{
         else return false;   
     }
 
-    public function comprobarPerdidaVentaja($puntosJug, $numJugador){
+    public function comprobarQuitarVentaja($puntosJug, $numJugador){
         if ($numJugador==1 && $puntosJug==4 && $this->getMarcador2()=="AD") return true;
         elseif ($numJugador==2 && $puntosJug==4 && $this->getMarcador1()=="AD") return true;
         else return false;
@@ -72,7 +72,7 @@ Class Tennis{
             if ($punto[0]==1){
                 if ($this->comprobarVentaja(++$puntosJug1, $puntosJug2)) $this->setMarcador1("AD");
                 elseif ($this->comprobarVictoria($puntosJug1, 1)) $this->ganadorSet(1);
-                elseif ($this->comprobarPerdidaVentaja($puntosJug1, 1)){
+                elseif ($this->comprobarQuitarVentaja($puntosJug1, 1)){
                     $puntosJug1 = $puntosJug2 = 3;
                     $this->setMarcador2($puntuaciones[$puntosJug2]);
                 }
@@ -81,7 +81,7 @@ Class Tennis{
             else if ($punto[1]==1){
                 if ($this->comprobarVentaja($puntosJug1, ++$puntosJug2)) $this->setMarcador2("AD");
                 elseif ($this->comprobarVictoria($puntosJug2, 2)) $this->ganadorSet(2);
-                elseif ($this->comprobarPerdidaVentaja($puntosJug2, 2)){
+                elseif ($this->comprobarQuitarVentaja($puntosJug2, 2)){
                     $puntosJug1 = $puntosJug2 = 3;
                     $this->setMarcador1($puntuaciones[$puntosJug1]);
                 }
