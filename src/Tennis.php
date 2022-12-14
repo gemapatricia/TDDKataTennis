@@ -46,7 +46,8 @@ Class Tennis{
             if ($punto[0] + $punto[1] != 1) throw new Exception("Valores para el punto inválidos");
 
             if ($punto[0]==1){
-                if (++$puntosJug1==4) $this->ganadorSet(1);
+                if (++$puntosJug1==4 && $puntosJug2==3) $this->setMarcador1("AD");
+                elseif ($puntosJug1==4) $this->ganadorSet(1);
                 else $this->setMarcador1($puntuaciones[$puntosJug1]);
             }
             else if ($punto[1]==1){
