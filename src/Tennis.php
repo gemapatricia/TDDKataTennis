@@ -51,7 +51,8 @@ Class Tennis{
                 else $this->setMarcador1($puntuaciones[$puntosJug1]);
             }
             else if ($punto[1]==1){
-                if (++$puntosJug2==4) $this->ganadorSet(2);
+                if (++$puntosJug2==4 && $puntosJug1==3) $this->setMarcador2("AD");
+                elseif ($puntosJug2==4) $this->ganadorSet(2);
                 else $this->setMarcador2($puntuaciones[$puntosJug2]);
             }
         }
