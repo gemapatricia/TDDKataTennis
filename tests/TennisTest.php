@@ -97,6 +97,11 @@ Class TennisTest extends TestCase{
         assertEquals(["40", "AD"], $objeto->calcularPuntuacion([[0,1], [0,1], [1,0], [1,0], [0,1], [1,0], [0,1]]), "No coincide la puntuacion segundo punto");
     }
 
+    public function testVentajaIgualesGana():void{
+        $objeto = new Tennis();
+        assertEquals(["1", "0"], $objeto->calcularPuntuacion([[0,1], [0,1], [1,0], [1,0], [0,1], [1,0], [1,0], [1,0]]), "No coincide la puntuacion segundo punto");
+    }
+
 }
 
 ?>
